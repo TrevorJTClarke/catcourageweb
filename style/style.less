@@ -1,0 +1,99 @@
+// Catcourage style
+html,
+body {
+    background: #86d5c3;
+    margin:0;
+    padding:0;
+    font: 300 21px/23px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-height: 600px;
+}
+
+section {
+    width: 916px;
+    margin: 100px auto;
+
+    .tagline {
+        font-size: 55px;
+        line-height: 57px;
+        margin-top: 20px;
+    }
+
+    .subtagline {
+        font-size: 18px;
+        line-height: 20px;
+        margin: 15px 0 0;
+    }
+
+    .btn-outlined {
+        margin: 60px 0 0;
+        padding: 15px 25px 15px 50px;
+    }
+}
+
+.col {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.btn-outlined {
+    background: transparent;
+    border: 3px solid #333;
+    border-radius: 3px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 25px;
+    position: relative;
+    font-size: 21px;
+    line-height: 22px;
+    outline:0;
+    text-decoration: none;
+    width: auto;
+
+    &:before {
+        background: url("img/icon-apple.png") left top no-repeat;
+        background-size: 100%;
+        position: absolute;
+        content: "";
+        margin-right: 11px;
+        width: 20px;
+        height: 27px;
+        left: 15px;
+        bottom: 13px;
+    }
+}
+
+.app {
+    border-radius: 27%;
+    box-shadow: 0 0 50px -5px rgba(0,0,0,0.3);
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+    }
+
+    svg {
+        display: block;
+    }
+}
+
+.app-title {
+    text-align: center;
+    font-size: 50px;
+    line-height: 70px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom:0;
+    font-size: 10px;
+    text-align: center;
+    padding: 0 0 20px;
+}
+
