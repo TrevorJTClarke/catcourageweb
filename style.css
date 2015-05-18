@@ -1,1 +1,326 @@
-html,body{background:#86d5c3;margin:0;padding:0;font:300 21px/23px "Helvetica Neue",Helvetica,Arial,sans-serif;min-height:600px}body .main{display:block}body .detail{display:none}body.loading .main{display:none}body.loading .detail{display:none}body.detail-visible .main{display:none}body.detail-visible .detail{display:block}a{color:#2a7766}.logo img{width:70%}.sw{position:relative;margin:0;padding:0;display:inline-block;width:64px;height:64px;vertical-align:top;background:url('img/social_icons.png') left top no-repeat;background-size:260px 64px}.s-facebook{background-position:0 0}.s-twitter{background-position:-64px 0}.s-tumblr{background-position:-128px 0}.s-email{background-position:-192px 0;background-size:255px 64px}section{width:916px;margin:100px auto 0}section.detail{margin:60px auto 0}section .tagline{font-size:55px;line-height:57px;margin-top:20px}section .subtagline{font-size:18px;line-height:20px;margin:15px 0 0}section .btn-outlined{margin:60px 0 0;padding:15px 25px 15px 50px}section .btn-secondary{display:none}.col{width:49%;display:inline-block;vertical-align:top}.featured .logo{width:220px;margin:0 auto}.featured .logo img{width:100%}.featured .tagline{font-size:21px;line-height:24px;margin-top:0;text-align:center}.featured .subtagline{font-size:14px;line-height:16px;margin:5px 0 40px;text-align:center}.featured .feat-wrap{border:5px solid #fff;border-radius:3px;box-shadow:0 0 20px -5px rgba(0,0,0,0.3);width:450px;margin:0 auto}.featured .feat-wrap img{display:block;width:100%;max-width:100%}.share{margin:40px auto 100px;padding:0;width:435px}.share .share-link{border:4px solid #fff;border-radius:50%;cursor:pointer;margin:0 15px 0 0;padding:10px;list-style:none;display:inline-block}.share .share-link:last-child{margin-right:0}.share .share-link:hover{box-shadow:0 0 20px -2px rgba(0,0,0,0.3)}.btn-outlined{background:transparent;border:3px solid #333;border-radius:3px;color:#333;cursor:pointer;display:inline-block;padding:15px 25px;position:relative;font-size:21px;line-height:22px;outline:0;text-decoration:none;width:auto}.btn-outlined:before{background:url("img/icon-apple.png") left top no-repeat;background-size:100%;position:absolute;content:"";margin-right:11px;width:20px;height:27px;left:15px;bottom:13px}.app{border-radius:27%;box-shadow:0 0 50px -5px rgba(0,0,0,0.3);width:100%;overflow:hidden}.app img{width:100%;max-width:100%;display:block}.app svg{display:block}.app-title{text-align:center;font-size:50px;line-height:70px}footer{position:fixed;left:0;right:0;bottom:0;font-size:10px;text-align:center;padding:0 0 20px}@media (min-width:631px) and (max-width:959px){.col{width:100%}.logo img{width:100%}section{text-align:center;margin:200px auto 0;width:100%}section .logo{position:absolute;margin:-70px 0 0 -150px;width:300px;left:50%}section .logo svg{width:300px;height:80px}section .btn-main{display:none}section .btn-secondary{display:inline-block}section .app{width:300px;margin:60px auto 0}.featured .logo{position:relative;left:auto}}@media (max-width:630px){.col{width:100%}.logo img{width:100%}section{text-align:center;margin:100px auto 0;width:100%}section .logo{position:absolute;margin:-70px 0 0 -100px;width:200px;left:50%}section .logo svg{width:200px;height:55px}section .btn-main{display:none}section .btn-secondary{display:inline-block}section .tagline{font-size:35px;line-height:37px;margin-top:0}section .subtagline{font-size:15px;line-height:22px;padding:0 50px}section .app{width:230px;margin:30px auto 0}.featured .logo{position:relative;left:auto}.featured .feat-wrap{width:290px}.share{margin:40px auto 100px;padding:0;width:231px}.share .share-link{margin:0 10px 20px}.share .share-link:last-child{margin-right:10px}footer{position:relative;padding:40px 0 20px}}
+html,
+body {
+  background: #86d5c3;
+  margin: 0;
+  padding: 0;
+  font: 300 21px/23px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height: 600px;
+}
+body .main {
+  display: block;
+}
+body .detail {
+  display: none;
+}
+body.loading .main {
+  display: none;
+}
+body.loading .detail {
+  display: none;
+}
+body.detail-visible .main {
+  display: none;
+}
+body.detail-visible .detail {
+  display: block;
+}
+a {
+  color: #2A7766;
+}
+.logo img {
+  width: 70%;
+}
+.sw {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  vertical-align: top;
+  background: url('img/social_icons.png') left top no-repeat;
+  background-size: 260px 64px;
+}
+.s-facebook {
+  background-position: 0 0;
+}
+.s-twitter {
+  background-position: -64px 0;
+}
+.s-tumblr {
+  background-position: -128px 0;
+}
+.s-email {
+  background-position: -192px 0;
+  background-size: 255px 64px;
+}
+section {
+  width: 916px;
+  margin: 100px auto 0;
+}
+section.detail {
+  margin: 60px auto 0;
+}
+section .tagline {
+  font-size: 55px;
+  line-height: 57px;
+  margin-top: 20px;
+}
+section .subtagline {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 15px 0 40px;
+}
+section .btn-outlined {
+  margin: 60px 0 0;
+  padding: 15px 25px 15px 50px;
+}
+section .btn-secondary {
+  display: none;
+}
+.col {
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+}
+.featured .logo {
+  width: 220px;
+  margin: 0 auto;
+}
+.featured .logo img {
+  width: 100%;
+}
+.featured .tagline {
+  font-size: 21px;
+  line-height: 24px;
+  margin-top: 0px;
+  text-align: center;
+}
+.featured .subtagline {
+  font-size: 14px;
+  line-height: 16px;
+  margin: 5px 0 40px;
+  text-align: center;
+}
+.featured .feat-wrap {
+  border: 5px solid #FFF;
+  border-radius: 3px;
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.3);
+  width: 450px;
+  margin: 0 auto;
+}
+.featured .feat-wrap img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+.share {
+  margin: 40px auto;
+  padding: 0;
+  width: 435px;
+}
+.share .share-link {
+  border: 4px solid #FFF;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 15px 0 0;
+  padding: 10px;
+  list-style: none;
+  display: inline-block;
+}
+.share .share-link:last-child {
+  margin-right: 0;
+}
+.share .share-link:hover {
+  box-shadow: 0 0 20px -2px rgba(0, 0, 0, 0.3);
+}
+.get-apps {
+  margin: 40px auto 100px;
+  padding: 0;
+  width: 290px;
+}
+.get-apps .btn-main {
+  display: inline-block !important;
+}
+.btn-outlined {
+  background: transparent;
+  border: 3px solid #333;
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px 25px;
+  position: relative;
+  font-size: 21px;
+  line-height: 22px;
+  outline: 0;
+  text-decoration: none;
+  width: auto;
+}
+.btn-outlined:before {
+  background: url("img/icon-apple.png") left top no-repeat;
+  background-size: 100%;
+  position: absolute;
+  content: "";
+  margin-right: 11px;
+  width: 20px;
+  height: 27px;
+  left: 15px;
+  bottom: 13px;
+}
+.app {
+  border-radius: 27%;
+  box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  overflow: hidden;
+}
+.app img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+.app svg {
+  display: block;
+}
+.app-title {
+  text-align: center;
+  font-size: 50px;
+  line-height: 70px;
+}
+.ios-main {
+  display: inline-block;
+  overflow: hidden;
+  background: url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.png) no-repeat;
+  width: 165px;
+  height: 40px;
+}
+.android-main {
+  height: 40px;
+}
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  text-align: center;
+  padding: 0 0 20px;
+}
+@media (min-width: 631px) and (max-width: 959px) {
+  .col {
+    width: 100%;
+  }
+  .logo img {
+    width: 100%;
+  }
+  section {
+    text-align: center;
+    margin: 200px auto 0;
+    width: 100%;
+  }
+  section .logo {
+    position: absolute;
+    margin: -70px 0 0 -150px;
+    width: 300px;
+    left: 50%;
+  }
+  section .logo svg {
+    width: 300px;
+    height: 80px;
+  }
+  section .btn-main {
+    display: none;
+  }
+  section .btn-secondary {
+    display: inline-block;
+  }
+  section .app {
+    width: 300px;
+    margin: 60px auto 0;
+  }
+  .featured .logo {
+    position: relative;
+    left: auto;
+  }
+}
+@media (max-width: 630px) {
+  .col {
+    width: 100%;
+  }
+  .logo img {
+    width: 100%;
+  }
+  section {
+    text-align: center;
+    margin: 100px auto 0;
+    width: 100%;
+  }
+  section .logo {
+    position: absolute;
+    margin: -70px 0 0 -100px;
+    width: 200px;
+    left: 50%;
+  }
+  section .logo svg {
+    width: 200px;
+    height: 55px;
+  }
+  section .btn-main {
+    display: none;
+  }
+  section .btn-secondary {
+    display: block;
+  }
+  section .btn-secondary.ios-main {
+    margin: 40px auto;
+    width: 135px;
+  }
+  section .btn-secondary .android-secondary {
+    width: 129px;
+    margin: 40px auto;
+  }
+  section .tagline {
+    font-size: 35px;
+    line-height: 37px;
+    margin-top: 0px;
+  }
+  section .subtagline {
+    font-size: 15px;
+    line-height: 22px;
+    padding: 0 50px;
+  }
+  section .app {
+    width: 230px;
+    margin: 30px auto 0;
+  }
+  .featured .logo {
+    position: relative;
+    left: auto;
+  }
+  .featured .feat-wrap {
+    width: 290px;
+  }
+  .share {
+    margin: 40px auto 0px;
+    padding: 0;
+    width: 231px;
+  }
+  .share .share-link {
+    margin: 0 10px 20px;
+  }
+  .share .share-link:last-child {
+    margin-right: 10px;
+  }
+  .get-apps {
+    margin: 0px auto 100px;
+  }
+  .get-apps .btn-main {
+    display: block !important;
+    width: 135px;
+    margin: 20px auto 0;
+  }
+  footer {
+    position: relative;
+    padding: 40px 0 20px;
+  }
+}
