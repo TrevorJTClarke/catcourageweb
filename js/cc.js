@@ -1,9 +1,9 @@
 /* © 2015 Sum37 Apps - V0.0.2 - 05/02/2015 */
 (function(w,d,undefined){
-var gifId, gifApiKey = "dc6zaTOxFJmzC";
+var gifApiKey = "dc6zaTOxFJmzC";
 /* author: Fabio Miranda Costa | github: fabiomcosta | twitter: @fabiomiranda | license: MIT-style license */
 (function(h,i){var f,c,j,k,m={},e,l,q=/^\s+|\s+$/g,r=!!i.querySelectorAll,g=function(d,b,a){f=a||[];e=b||g.context;if(r)try{n(e.querySelectorAll(d));return f}catch(v){}l=e.ownerDocument||e;d=d.replace(q,"");for(c={};d=d.replace(/([#.:])?([^#.:]*)/,s););d=(b=c.id)&&c.tag||c.classes||c.pseudos||!b&&(c.classes||c.pseudos)?t:o;if(b){if(a=b=l.getElementById(b))if(!(a=l===e))a:{a=b;do if(a===e){a=true;break a}while(a=a.parentNode);a=false}a&&d([b])}else d(e.getElementsByTagName(c.tag||"*"));return f},u= function(d){if(c.tag){var b=d.nodeName.toUpperCase();if(c.tag=="*"){if(b<"@")return false}else if(b!=c.tag)return false}if(c.id&&d.getAttribute("id")!=c.id)return false;if(j=c.classes){var a=" "+d.className+" ";for(b=j.length;b--;)if(a.indexOf(" "+j[b]+" ")<0)return false}if(k=c.pseudos)for(b=k.length;b--;){a=m[k[b]];if(!(a&&a.call(g,d)))return false}return true},s=function(d,b,a){if(b)if(b=="#")c.id=a;else if(b==".")if(c.classes)c.classes.push(a);else c.classes=[a];else{if(b==":")if(c.pseudos)c.pseudos.push(a); else c.pseudos=[a]}else c.tag=a.toUpperCase();return""},p=Array.prototype.slice,n=function(d){f=p.call(d,0)},o=function(d){for(var b=0,a;a=d[b++];)f.push(a)};try{p.call(i.documentElement.childNodes,0)}catch(w){n=o}var t=function(d){for(var b=0,a;a=d[b++];)u(a)&&f.push(a)};g.pseudos=m;g.context=i;h.uSelector=g;h.$u||(h.$u=g)})(this,document);
-function jax(a,b){if(this.bindFunction=function(a,b){return function(){return a.apply(b,[b])}},this.stateChange=function(){4==this.request.readyState&&this.callbackFunction(this.request.responseText)},this.getRequest=function(){return window.ActiveXObject?new ActiveXObject("Microsoft.XMLHTTP"):window.XMLHttpRequest?new XMLHttpRequest:!1},this.postBody=arguments[2]||"",this.callbackFunction=b,this.url=a,this.request=this.getRequest(),this.request){var c=this.request;c.onreadystatechange=this.bindFunction(this.stateChange,this),""!==this.postBody?(c.open("POST",a,!0),c.setRequestHeader("X-Requested-With","XMLHttpRequest"),c.setRequestHeader("Content-type","application/x-www-form-urlencoded"),c.setRequestHeader("Connection","close")):c.open("GET",a,!0),c.send(this.postBody)}}
+// function jax(a,b){if(this.bindFunction=function(a,b){return function(){return a.apply(b,[b])}},this.stateChange=function(){4==this.request.readyState&&this.callbackFunction(this.request.responseText)},this.getRequest=function(){return window.ActiveXObject?new ActiveXObject("Microsoft.XMLHTTP"):window.XMLHttpRequest?new XMLHttpRequest:!1},this.postBody=arguments[2]||"",this.callbackFunction=b,this.url=a,this.request=this.getRequest(),this.request){var c=this.request;c.onreadystatechange=this.bindFunction(this.stateChange,this),""!==this.postBody?(c.open("POST",a,!0),c.setRequestHeader("X-Requested-With","XMLHttpRequest"),c.setRequestHeader("Content-type","application/x-www-form-urlencoded"),c.setRequestHeader("Connection","close")):c.open("GET",a,!0),c.send(this.postBody)}}
 function Share (){
 
     return {
@@ -19,16 +19,16 @@ function Share (){
         _slf = this;
 
         switch ( type ) {
-            case "Facebook": 
+            case "Facebook":
                 _slf.buildFacebook( params );
                 break;
-            case "Twitter": 
+            case "Twitter":
                 _slf.buildTwitter( params );
                 break;
-            case "Tumblr": 
+            case "Tumblr":
                 _slf.buildTumblr( params );
                 break;
-            case "Email": 
+            case "Email":
                 _slf.buildEmail( params );
                 break;
             default:
@@ -93,7 +93,7 @@ function Share (){
      */
     buildEmail: function ( shareParams ) {
         var _shareUrl = 'mailto:?subject=Catcourage App is my new favorite thing&body=I found this today, ' + encodeURI(shareParams.title) + '%0A' + encodeURIComponent(shareParams.link) + '%0A%0A%20Let%20me%20know%20what%20you%20think!';
-        
+
         window.location.href = _shareUrl;
     }
 
@@ -105,9 +105,53 @@ function isRootPath () {
     return (window.location.pathname === "/");
 }
 
+function searchToObject() {
+    var pairs = window.location.search.substring(1).split("&"),
+        obj = {},
+        pair,
+        i;
+
+    for ( i in pairs ) {
+        if ( pairs[i] === "" ) { continue; }
+
+        pair = pairs[i].split("=");
+        obj[ decodeURIComponent( pair[0] ) ] = decodeURIComponent( pair[1] );
+    }
+
+    return obj;
+}
+
 function getPathId(){
     if(window.location.pathname.search("index") > -1){ return "ITAKo27WnL7ig"; }
     return "" + window.location.pathname.replace("/","");
+}
+
+function idOffset ( id ) {
+    return parseInt(id, 10) - 200;
+}
+
+function getUriPath () {
+    if(window.location.search !== ""){
+        var srchObj = searchToObject();
+        if(srchObj && srchObj.id){
+            return cc[ idOffset( srchObj.id ) ];
+        }
+    } else {
+        var gifId = getPathId();
+        return { image_url: "http://s3.amazonaws.com/giphygifs/media/" + gifId + "/giphy.gif" };
+    }
+}
+
+function getGifCcId ( path ) {
+    if(typeof cc === undefined){return;}
+    var finId = 201;
+    cc.map(function(obj, idx) {
+        if(obj.image_url === path){
+            console.log(idx + 200);
+            finId = idx + 200;
+        }
+    });
+    return finId;
 }
 
 function setGif ( url ){
@@ -115,33 +159,22 @@ function setGif ( url ){
 }
 
 (function() {
-    var isRoot = isRootPath();
+    var gifSrc,
+        isRoot = isRootPath();
     if(isRoot){
         $u("body")[0].className = "";
     } else {
         $u("body")[0].className = "detail-visible";
 
         // get ID
-        gifId = getPathId();
-
-        // load gif resource
-        var success = false;
-        jax("http://api.giphy.com/v1/gifs/" + gifId + "?api_key=" + gifApiKey,function(res){
-            var gif = JSON.parse(res);
-            setGif( gif.data.images.original.url );
-            success = true;
-        });
-
-        setTimeout(function(){
-            if(success === false){
-                setGif("img/not_found.png");
-            }
-        },10000);
+        gifSrc = getUriPath();
+        setGif( gifSrc.image_url );
 
         // Social bindings
+        var linkId = getGifCcId( gifSrc.image_url );
         var social = {};
             social.title = "HA! I cant stop laughing, get this app! ";
-            social.link = "http://catcourage.com/" + gifId;
+            social.link = "http://catcourage.com?id=" + linkId + " #catcourage";
             social.img = "http://catcourage.com/icons/icon200.png";
 
         // bind the buttons, find title, bind correct social share fn
